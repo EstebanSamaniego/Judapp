@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard">
+
+    <RelativeLayout
+        android:id="@+id/relative_layout_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <EditText
+            android:id="@+id/name_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre"/>
+
+        <CheckBox
+            android:id="@+id/cb_bible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biblia"
+            android:layout_below="@id/name_edit_text"/>
+
+        <TextView
+            android:id="@+id/tv_read_caps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capitulos Leidos"
+            android:textSize="20dp"
+            android:paddingTop="10dp"
+            android:layout_below="@id/cb_bible"/>
+
+
+        <!--<EditText
+            android:id="@+id/et_read_caps"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:layout_below="@id/tv_read_caps"/>-->
+
+
+    </RelativeLayout>
+
+</FrameLayout>
