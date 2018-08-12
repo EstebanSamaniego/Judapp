@@ -12,10 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
+import com.example.a0esifsam.drawerlayout.model.DbHandler;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 
 
 /**
@@ -67,6 +72,7 @@ public class Events extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -74,33 +80,15 @@ public class Events extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_events, container, false);
 
-        ArrayList<String> data = new ArrayList<>();
-        data.add("Cuando grande es El");
-        data.add("Destellos");
-        data.add("Ven ante su trono");
-        data.add("Cara a cara");
-        data.add("Haznos uno");
-        data.add("Cuan grande es Dios");
-        data.add("Lead us back to You");
-        data.add("Cuando grande es El");
-        data.add("Destellos");
-        data.add("Ven ante su trono");
-        data.add("Cara a cara");
-        data.add("Haznos uno");
-        data.add("Cuan grande es Dios");
-        data.add("Lead us back to You");
-        data.add("Cuando grande es El");
-        data.add("Destellos");
-        data.add("Ven ante su trono");
-        data.add("Cara a cara");
-        data.add("Haznos uno");
-        data.add("Cuan grande es Dios");
-        data.add("Lead us back to You");
+        DbHandler dbHandler = new DbHandler(getActivity());
+        ArrayList<String> listaCanciones = dbHandler.getCanciones();
+
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 getContext(),
                 android.R.layout.simple_list_item_1,
-                data
+                listaCanciones
         );
 
         final ListView lv = (ListView) view.findViewById(R.id.lvData);
