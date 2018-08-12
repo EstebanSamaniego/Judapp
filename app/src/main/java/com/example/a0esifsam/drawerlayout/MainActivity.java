@@ -11,15 +11,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.example.a0esifsam.drawerlayout.model.DbHandler;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-
 public class MainActivity extends AppCompatActivity
             implements  Activity.OnFragmentInteractionListener,
                         Dashboard.OnFragmentInteractionListener,
-                        Events.OnFragmentInteractionListener,
+                        ListaCanciones.OnFragmentInteractionListener,
                         Logout.OnFragmentInteractionListener,
                         Search.OnFragmentInteractionListener,
                         Settings.OnFragmentInteractionListener{
@@ -53,7 +48,7 @@ public class MainActivity extends AppCompatActivity
                 fragmentClass = Dashboard.class;
                 break;
             case R.id.event:
-                fragmentClass = Events.class;
+                fragmentClass = ListaCanciones.class;
                 break;
             case R.id.search:
                 fragmentClass = Search.class;
